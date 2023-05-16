@@ -142,7 +142,7 @@ def fpga_evaluate(design_file: str, sequence: List[Union[str, int]], lut_inputs:
     abc_command += ';'.join(sequence) + '; '
     if write_unmap_design_path is not None:
         abc_command += 'write ' + write_unmap_design_path + '; '
-    abc_command += f"if {'-v ' if verbose > 0 else ''}-K {lut_inputs}; "
+    # abc_command += f"if {'-v ' if verbose > 0 else ''}-K {lut_inputs}; "
     abc_command += 'print_stats; '
     cmd_elements = ['yosys-abc', '-c', abc_command]
     proc = subprocess.check_output(cmd_elements)
@@ -159,7 +159,7 @@ def fpga_evaluate(design_file: str, sequence: List[Union[str, int]], lut_inputs:
         print("----" * 10)
     levels = int(ob.group().split('=')[1].strip())
 
-    ob = re.search(r'nd *= *[0-9]+', line)
+    ob = re.search(r'and *= *[0-9]+', line)
     lut = int(ob.group().split('=')[1].strip())
 
     extra_info['exec_time'] = time.time() - t_ref

@@ -66,15 +66,22 @@ class ActionCompo(Action):
 BALANCE = ActionSimple('balance')
 REWRITE = ActionSimple('rewrite')
 REWRITE_Z = ActionSimple('rewrite -z')
+REWRITE_L = ActionSimple('rewrite -l')
+REWRITE_Z_L = ActionSimple('rewrite -z -l')
 REFACTOR = ActionSimple('refactor')
 REFACTOR_Z = ActionSimple('refactor -z')
+REFACTOR_L = ActionSimple('refactor -l')
+REFACTOR_Z_L = ActionSimple('refactor -z -l')
 RESUB = ActionSimple('resub')
 RESUB_Z = ActionSimple('resub -z')
+RESUB_L = ActionSimple('resub -l')
+RESUB_Z_L = ActionSimple('resub -z -l')
 FRAIG = ActionSimple('fraig')
 SOPB = ActionCompo('&sopb')
 BLUT = ActionCompo('&blut')
 DSDB = ActionCompo('&dsdb')
 STRASH = ActionSimple('strash')
+DC2 = ActionSimple('dc2')
 
 STD_ACTION_SPACE: List[Action] = [
     REWRITE,
@@ -89,15 +96,22 @@ STD_ACTION_SPACE: List[Action] = [
 EXTENDED_ACTION_SPACE: List[Action] = [
     REWRITE,
     REWRITE_Z,
+    REWRITE_L,
+    REWRITE_Z_L,
     REFACTOR,
     REFACTOR_Z,
+    REFACTOR_L,
+    REFACTOR_Z_L,
     RESUB,
     RESUB_Z,
+    RESUB_L,
+    RESUB_Z_L,
     BALANCE,
     FRAIG,
-    SOPB,
-    BLUT,
-    DSDB
+    # SOPB,
+    # BLUT,
+    DSDB,
+    DC2
 ]
 
 STRASH_EXTENDED_ACTION_SPACE: List[Action] = [

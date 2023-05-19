@@ -16,7 +16,7 @@ objective='both'
 seq_length=20
 
 # --- GRiLLS setup ---
-n_episodes=1000
+n_episodes=1
 
 overwrite=0
 if ((overwrite == 0)); then overwrite=''; else overwrite='--overwrite'; fi

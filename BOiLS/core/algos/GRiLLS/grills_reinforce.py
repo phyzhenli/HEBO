@@ -4,7 +4,7 @@
 import random
 import bisect
 
-from resources.abcRL import PiApprox, BaselineVApprox
+from resources.abcRL.reinforce import PiApprox, BaselineVApprox
 from core.algos.GRiLLS.grills_env import EnvGraph
 
 

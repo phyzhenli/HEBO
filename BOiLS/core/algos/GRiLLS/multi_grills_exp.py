@@ -26,7 +26,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from resources.abcRL import PiApprox, FcModelGraph, FcModel, BaselineVApprox
+from resources.abcRL.reinforce import PiApprox, FcModelGraph, FcModel, BaselineVApprox
 from core.algos.GRiLLS.grills_env import EnvGraph
 from core.algos.GRiLLS.grills_reinforce import Reinforce
 from core.algos.GRiLLS.utils import METHOD_ID, META_METHOD_ID

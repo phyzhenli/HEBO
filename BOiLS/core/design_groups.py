@@ -47,8 +47,11 @@ def get_designs_path(designs_id: str, frac_part: str = None) -> List[str]:
     """ Get list of filepaths to designs """
 
     designs_filepath: List[str] = []
-    for design_id in DESIGN_GROUPS[designs_id]:
-        designs_filepath.append(os.path.join(DATA_PATH, f'{design_id}.blif'))
+    if designs_id in DESIGN_GROUPS:
+        for design_id in DESIGN_GROUPS[designs_id]:
+            designs_filepath.append(os.path.join(DATA_PATH, f'{design_id}.blif'))
+    else:
+        designs_filepath.append(os.path.join(DATA_PATH, f'{designs_id}.blif'))
     if frac_part is None:
         s = slice(0, len(designs_filepath))
     else:
